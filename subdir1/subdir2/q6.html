@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q6: Redirect by User-Agent</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <header>
+    <h1>Q6: Redirect by User-Agent</h1>
+  </header>
+
+  <nav>
+    <a href="../../index.html">🏠 Home</a>
+    <a href="../../q1.html">Q1</a>
+    <a href="../../q2.html">Q2</a>
+    <a href="../../q3.html">Q3</a>
+    <a href="../q4.html">Q4</a>
+    <a href="../q5.html">Q5</a>
+    <a href="q6.html">Q6</a>
+  </nav>
+
+  <main>
+    <h2>Response</h2>
+    <p>
+      Hi Customer,
+
+	That’s a great use case you’ve brought up. You’re right — Page Rules don’t allow redirection based on User-Agent strings. But you can absolutely achieve this using a Cloudflare Worker.
+	With a Worker, you can inspect the incoming request headers and redirect based on conditions like browser type. For example, if the User-Agent contains MSIE 8.0, the Worker can issue a 302 redirect to a 	custom page you specify.
+	I tested a simple Worker script in the Cloudflare dashboard to verify, and it worked as expected. It’s lightweight, runs at the edge, and doesn’t add noticeable latency.
+	Would you like me to share a ready-to-use script that you can deploy right away?
+	All the best,
+    </p>
+
+    <h3>Thought Process</h3>
+    <p>
+      Since Page Rules only allow redirection based on URL patterns, not headers, 
+      the only Cloudflare-native solution is Workers. Workers give full control over requests, 
+      including inspecting User-Agent and deciding how to respond.
+    </p>
+
+    <h3>Tools I Would Use</h3>
+    <ul>
+      <li><strong>Cloudflare Workers:</strong> To implement the redirection logic.</li>
+      <li><strong>Cloudflare Dashboard / Wrangler CLI:</strong> For deploying and testing the Worker.</li>
+      <li><strong>Browser DevTools + curl:</strong> To test that the redirection works for different user agents.</li>
+    </ul>
+
+
+  </main>
+</body>
+</html>

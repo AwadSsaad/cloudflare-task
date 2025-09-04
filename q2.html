@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q2: Site Served from California</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Q2: Why Is My Site Coming from California?</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="q1.html">Q1</a>
+    <a href="q2.html">Q2</a>
+    <a href="q3.html">Q3</a>
+    <a href="subdir1/q4.html">Q4</a>
+    <a href="subdir1/q5.html">Q5</a>
+    <a href="subdir1/subdir2/q6.html">Q6</a>
+  </nav>
+
+  <main>
+    <h2>Response</h2>
+    <p>
+      	Hi Customer,
+	I can see how this might look confusing — you’re in London, but the IP trace shows California. Let me reassure you that your visitors are still being served by the closest Cloudflare data center.
+	The IP addresses you see don’t always reflect the exact data center location. What’s happening is that Cloudflare announces a set of IPs everywhere in the world, and depending on the lookup method, it may 	look like California even though requests are being routed to London or a nearby region.
+	I confirmed this by checking Cloudflare’s routing and using traceroute tools, which show the actual traffic path. From what I see, your site is indeed being served locally, so performance won’t be
+	impacted.
+	
+	Think of it as a global phone number — no matter what number shows, the call is routed to the nearest "office."
+
+	Hope that clears it up!
+
+	Warm regards,
+
+    </p>
+
+    <h3>Thought Process</h3>
+    <p>
+      Tools that show IP locations often use the registered ownership location (California)
+      rather than the physical data center serving the content. The traffic routing, however,
+      is optimized and served from the closest Cloudflare PoP (Point of Presence).
+    </p>
+
+    <h3>Tools I Would Use</h3>
+    <ul>
+      <li><strong>Cloudflare Trace (/cdn-cgi/trace):</strong> To see the actual data center code.</li>
+      <li><strong>Online IP lookup:</strong> To demonstrate the discrepancy in geolocation databases.</li>
+      <li><strong>Cloudflare Analytics:</strong> To confirm request routing.</li>
+    </ul>
+  </main>
+
+</body>
+</html>

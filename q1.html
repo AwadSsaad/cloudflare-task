@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q1: Site Down</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Q1: Site Down, Are Name Servers Working?</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="q1.html">Q1</a>
+    <a href="q2.html">Q2</a>
+    <a href="q3.html">Q3</a>
+    <a href="subdir1/q4.html">Q4</a>
+    <a href="subdir1/q5.html">Q5</a>
+    <a href="subdir1/subdir2/q6.html">Q6</a>
+  </nav>
+
+  <main>
+    <h2>Response</h2>
+    <p>
+      Hi Customer,
+
+	Thank you for reaching out — I completely understand how stressful it can be when your site feels unreachable. I checked Cloudflare’s global status and can confirm that our nameservers are fully	o	perational. From my side, your domain is resolving correctly across multiple networks.
+
+	In cases like this, the root cause usually isn’t our nameservers but rather something in the DNS setup itself — things like incorrect records, propagation delays, or registrar settings. To be absolutely 	sure, I ran queries using tools like dig and nslookup from different locations, and everything looks consistent. I also verified on our Cloudflare Status page
+ 	that no related incidents are ongoing.
+
+	My suggestion would be to double-check your DNS records within the Cloudflare dashboard and ensure they match what your hosting provider expects. If you’d like, I can walk you through those steps.
+
+	Best regards,
+    </p>
+
+    <h3>Thought Process</h3>
+    <p>
+      Since Cloudflare operates a globally distributed nameserver system with redundancy,
+      a total outage is extremely unlikely. The issue is often caused by propagation delay,
+      incorrect DNS records, or mismatched registrar settings.
+    </p>
+
+    <h3>Tools I Would Use</h3>
+    <ul>
+      <li><strong>dig/nslookup:</strong> To query DNS records from multiple locations.</li>
+      <li><strong>Cloudflare DNS Analytics:</strong> To verify requests are resolving.</li>
+      <li><strong>Cloudflare Status Page:</strong> To confirm no incident is ongoing.</li>
+    </ul>
+  </main>
+</body>
+</html>

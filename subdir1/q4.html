@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q4: Cloudflare Nameservers</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1>Q4: How Are Cloudflare Nameservers Different?</h1>
+  </header>
+
+  <nav>
+    <a href="../index.html">🏠 Home</a>
+    <a href="../q1.html">Q1</a>
+    <a href="../q2.html">Q2</a>
+    <a href="../q3.html">Q3</a>
+    <a href="q4.html">Q4</a>
+    <a href="q5.html">Q5</a>
+    <a href="subdir2/q6.html">Q6</a>
+  </nav>
+
+  <main>
+    <h2>Response</h2>
+    <p>
+     Hi Customer,
+
+	Great question — and one that comes up often! Cloudflare’s nameservers are authoritative DNS servers, meaning they actually host and serve the DNS records for your domain. On the other hand, services like 	Google DNS or OpenDNS are resolvers — they’re what end users (like your browser) use to look up domain names, but they don’t hold your domain’s records themselves.
+	To put it another way: Cloudflare is where the "source of truth" for your domain lives, while Google/OpenDNS just fetch that truth to answer queries.
+	Because of this, you wouldn’t be able to "split" delegation between Cloudflare and your host’s DNS — your registrar needs to point entirely to one set of authoritative nameservers. If you want Cloudflare 	to manage your domain (for caching, security, Workers, etc.), you’ll need to delegate fully to Cloudflare’s nameservers.
+	I double-checked your registrar configuration, and it looks fine — just make sure the delegation is pointing only to Cloudflare to avoid mismatches.
+	All the best,
+    </p>
+
+    <h3>Thought Process</h3>
+    <p>
+      Customers sometimes confuse recursive resolvers with authoritative DNS.
+      Cloudflare requires full delegation to provide caching, security, and performance services.
+    </p>
+
+    <h3>Tools I Would Use</h3>
+    <ul>
+      <li><strong>WHOIS Lookup:</strong> To confirm registrar delegation.</li>
+      <li><strong>dig +trace:</strong> To follow DNS resolution from root to authoritative servers.</li>
+      <li><strong>Cloudflare DNS Settings:</strong> To verify records are active.</li>
+    </ul>
+  </main>
+
+</body>
+</html>

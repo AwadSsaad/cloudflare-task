@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q5: Content Not Cached</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1>Q5: Why Is Content Not Cached?</h1>
+  </header>
+
+  <nav>
+    <a href="../index.html">🏠 Home</a>
+    <a href="../q1.html">Q1</a>
+    <a href="../q2.html">Q2</a>
+    <a href="../q3.html">Q3</a>
+    <a href="q4.html">Q4</a>
+    <a href="q5.html">Q5</a>
+    <a href="subdir2/q6.html">Q6</a>
+  </nav>
+
+  <main>
+    <h2>Response</h2>
+    <p>
+	Hi Customer,
+
+	Thanks for sharing the curl output — that was very helpful. I noticed your server is returning the following header:
+
+	<li>Cache-Control: no-store, no-cache, must-revalidate, max-age=0</li>
+
+	This essentially instructs Cloudflare (and browsers) not to cache your content. Since Cloudflare respects your origin server’s cache headers, the resources are being passed through rather than cached.
+	To fix this, you have a couple of options:
+	Adjust your origin server’s cache headers so they allow caching.
+	Or, if you want Cloudflare to cache despite the headers, you can create a Page Rule or Cache Rule in the Cloudflare dashboard that overrides them.
+	I tested this by re-requesting your site and confirmed that with the current headers, caching is bypassed. Once headers are updated (or a Page Rule is applied), caching should start working as expected.
+	Happy to help configure the right rule if you’d like!
+	Best regards,
+    </p>
+
+    <h3>Thought Process</h3>
+    <p>
+      Cloudflare respects origin headers by default. If an origin explicitly disables caching,
+      the CDN won’t cache unless instructed to ignore or override via rules.
+    </p>
+
+    <h3>Tools I Would Use</h3>
+    <ul>
+      <li><strong>curl -I:</strong> To inspect HTTP response headers.</li>
+      <li><strong>Cloudflare Dashboard (Caching):</strong> To apply cache level overrides.</li>
+      <li><strong>Cloudflare Analytics:</strong> To confirm cache HIT/MISS ratios.</li>
+    </ul>
+  </main>
+</body>
+</html>

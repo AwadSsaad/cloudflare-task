@@ -1,0 +1,73 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+  color: #333;
+}
+
+header {
+  background: #4a90e2;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: #fff;
+  padding: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav a {
+  text-decoration: none;
+  background: #f39c12;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
+}
+
+nav a:hover {
+  background: #e67e22;
+  transform: translateY(-2px);
+}
+
+main {
+  padding: 2rem;
+  text-align: center;
+}
+
+main h2 {
+  margin-bottom: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #4a90e2;
+  color: white;
+  margin-top: 2rem;
+}
+
+ul {
+  list-style-type: disc;   /* ensures normal bullet points */
+  padding-left: 20px;      /* adds spacing so bullets don’t overlap text */
+  margin: 10px 450px;          /* some spacing around list */
+}
+
+li {
+  margin-bottom: 6px;      /* spacing between items */
+}

@@ -1,16 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Answers Site</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare Task Answers</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+      color: #333;
+    }
+    header {
+      background: #4a90e2;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      background: #fff;
+      padding: 0.75rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav a {
+      text-decoration: none;
+      background: #f39c12;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      transition: background 0.3s ease, transform 0.2s ease;
+      font-weight: 600;
+    }
+    nav a:hover {
+      background: #e67e22;
+      transform: translateY(-2px);
+    }
+    main {
+      padding: 2rem;
+      text-align: center;
+    }
+    main h2 {
+      margin-bottom: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #4a90e2;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to My Cloudflare Pages Site</h1>
-  <p>This site contains my answers for the assignment.</p>
+  <header>
+    <h1>🌐 Cloudflare Support Answers</h1>
+  </header>
 
-  <h2>Navigation</h2>
-  <ul>
-    <li><a href="page1.html">Page 1</a></li>
-    <li><a href="subdir1/answers.html">Answers in Subdir</a></li>
-  </ul>
+  <nav>
+    <a href="q1.html">Q1: Site Down</a>
+    <a href="q2.html">Q2: Location Issue</a>
+    <a href="q3.html">Q3: Workers Not Applied</a>
+    <a href="subdir1/q4.html">Q4: Nameservers</a>
+    <a href="subdir1/q5.html">Q5: Caching</a>
+    <a href="subdir1/subdir2/q6.html">Q6: Redirect by User-Agent</a>
+  </nav>
+
+  <main>
+    <h2>Welcome to My Cloudflare Task Submission</h2>
+    <p>
+      This site contains my answers to the Cloudflare support test questions.
+      Use the navigation bar above to explore each response.
+    </p>
+  </main>
+
 </body>
 </html>

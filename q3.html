@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q3: Workers Not Applied</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Q3: Worker Not Applying</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="q1.html">Q1</a>
+    <a href="q2.html">Q2</a>
+    <a href="q3.html">Q3</a>
+    <a href="subdir1/q4.html">Q4</a>
+    <a href="subdir1/q5.html">Q5</a>
+    <a href="subdir1/subdir2/q6.html">Q6</a>
+  </nav>
+
+  <main>
+    <h2>Response</h2>
+    <p>
+      Hi Customer,
+
+	Thanks for flagging this. I know it can be frustrating when a Worker works perfectly in the debugger but doesn’t seem to apply live. I did a quick review of your settings and it looks like the Worker 	itself is fine, but it hasn’t been bound to a route yet.
+	On Cloudflare, adding a Worker requires linking it to a specific route pattern (for example, example.com/*). Without that step, requests to your domain won’t actually trigger the Worker.
+	To confirm, I checked your site with curl and saw no Worker headers in the response, which supports the route not being active. The good news is it’s a quick fix: just go to your Workers dashboard, select 	your Worker, and assign it a route.
+
+	Once that’s done, it should start behaving as expected outside of the debugger. If it still doesn’t, I’d recommend purging cache and testing again.
+
+	Let me know how it goes — happy to walk you through it step by step.
+
+Cheers,
+    </p>
+
+    <h3>Thought Process</h3>
+    <p>
+      Workers don’t automatically apply to all requests unless assigned to a route.
+      If no route is defined, production traffic will bypass the Worker completely.
+    </p>
+
+    <h3>Tools I Would Use</h3>
+    <ul>
+      <li><strong>Cloudflare Dashboard (Workers → Triggers):</strong> To check routes.</li>
+      <li><strong>curl with headers:</strong> To verify Worker response headers live.</li>
+      <li><strong>Wrangler CLI:</strong> For debugging and testing deployments.</li>
+    </ul>
+  </main>
+</body>
+</html>
